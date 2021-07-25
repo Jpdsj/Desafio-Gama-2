@@ -1,0 +1,300 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+input:focus{
+    border: none;
+    box-shadow: 0 0 0 0;
+    outline: 0;
+}
+
+html {
+    /* Para utilizar rem -> 10px = 1rem */
+    font-size: 62.5%;
+
+    /* colors */    
+    --red-gradient: linear-gradient(90deg, #FD0056 0%, #F50045 100%);
+    --red-button: linear-gradient(90deg, #FD0056 35.92%, #F50045 100%);
+    --gray-fields: #F5F8FA; 
+    --red-menu: #FD0056;
+    --gray-title: #737275;
+    --line-form: #E6E9EF;
+    --text-input: #AAAAB2;
+    --red-button-hover: linear-gradient(90deg, #FF336D 0%, #FF3377 100%);
+    
+}
+
+nav {
+    width: 100vw;
+    height: 10vh;
+    background: #FFF;
+    color: #000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.3);
+}
+
+nav p {
+    font: 600 1.4rem 'Nunito', sans-serif;
+    margin-left: 9rem;
+    position: absolute;
+}
+
+nav .menu {
+    opacity: 0;
+    visibility: hidden;
+
+    /* efeito do menu */
+    top: -20rem;
+    transition: .2s;
+}
+
+nav .menu ul {
+    display: none; /* Efeito do menu */
+}
+
+nav.show .menu {
+    opacity: 1;
+    visibility: visible;
+    background: #FFF;
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: grid;
+    place-content: center;
+}
+
+nav ul li {
+    text-align: center;
+}
+
+/* Dessa maneira indica ao CSS que deve aplicar essa config quando a Nav receber a classe show */
+nav.show ul.grid {
+    display: grid;
+    gap: 4rem;
+}
+
+nav .icon-menu {
+    position: absolute;
+    right: 1.5rem;
+}
+
+nav.show .icon-menu {
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    right: 1.5rem;
+}
+
+nav .icon-close {
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    right: 1.5rem;
+
+    /* efeito do manu */
+    top: -3rem;
+    transition: .2s;
+}
+
+nav.show .icon-close{
+    visibility: visible;
+    opacity: 1;
+
+    /* efeito do menu */
+    top: 3rem;
+}
+
+.i {    
+    visibility: hidden;
+}
+
+.title-menu {
+    font: 600 3.0rem 'Nunito', sans-serif;
+    color: #000;
+}
+
+.img-user {
+    border-radius: 100%;
+    width: 5.8rem;
+    height: 5.8rem;
+    margin-left: 1.9rem;
+}
+
+.container-bottom {
+    width: 100vw;
+    height: 85vh;
+    display: flex;
+    justify-content: center;
+}
+
+.line {
+    width: 34.9rem;
+    height: 0;
+    border: .1rem solid #E6E9EF;
+}
+
+.form-label {
+    display: block;
+}
+
+.input-field {
+    width: 100%;
+    height: 3.0rem;
+    padding-left: 1.0rem;
+    margin-top: .2rem;
+    border-radius: .6rem;
+    border: .1rem solid var(--line-form);
+    background: #F5F8FA;
+    color: var(--text-input);
+}
+
+legend {
+    font: 600 2.4rem 'Nunito', sans-serif;
+    color: var(--text-input);
+    margin-top: 1.5rem;
+}
+
+label {
+    font: 400 1.4rem 'Nunito', sans-serif;
+    color: var(--text-input);
+    margin-top: 1.0rem;
+}
+
+.div-register {
+    text-align: center;
+}
+
+.register {
+    margin-top: 2.8rem;
+    width: 14.2rem;
+    height: 3.6rem;
+    background: var(--red-button);
+    border-radius: 2.0rem;
+    border-style: solid;
+    border-color: var(--red-menu);
+    color: #FFF;
+    transition: filter .3s;
+}
+
+.register:hover {
+    filter: brightness(1.3)
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+footer img {
+    width: 2.4rem;
+    height: 2.4rem;
+    margin: 0 1.25rem 0 1.25rem;
+}
+
+/* Responsivo */
+/* large devices: > 992 */
+@media (min-width: 992px) {
+
+body {
+    background: #F5F8FA;
+}
+
+ .toggle {
+    display: none;
+}
+
+nav .menu {
+    opacity: 1;
+    visibility: visible;
+    width: 45rem;
+}
+
+nav .menu ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav .menu ul li a {
+    display: flex;
+    align-items: center;
+    font: 600 1.2rem 'Nunito', sans-serif;    
+}
+
+nav .menu ul li a:hover{
+    color: #FD0056
+}
+
+.title-menu {
+    padding-right: 5rem;
+}
+
+.form-content {
+    width: 82.4rem;
+    height: 60.9rem;
+    background: white;
+    margin-top: 2rem;
+    border-radius: 2rem;
+    border: solid 1px var(--line-form);
+    padding: 2.5rem;
+}
+
+.forms {
+    display: flex;
+    align-items: center;
+    justify-content: center;   
+}
+
+.form-column-one {
+    margin-right: 1.5rem;
+}
+
+.form-column-two {
+    margin-left: 1.5rem;
+}
+
+.line {
+    width: 76.9rem;
+    height: 0;
+    border: .1rem solid #E6E9EF;
+}
+
+.input-field {
+    width: 36.9rem;
+    height: 3.0rem;
+    padding-left: 1.0rem;
+    margin-top: .2rem;
+    border-radius: .6rem;
+    border: .1rem solid var(--line-form);
+    background: #F5F8FA;
+    color: var(--text-input);
+}
+
+.register {
+    margin-top: 8rem;
+    cursor: pointer;
+}
+
+.i {    
+    margin-right: 1rem;
+    font-size: 2rem;
+    visibility: visible;
+} 
+
+
+}
